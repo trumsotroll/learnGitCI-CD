@@ -1,4 +1,4 @@
-#include "../inc/GPIO_hal.h"
+#include "../inc/gpio_hal.h"
 #include "../../include/S32K144.h"
 #include "../inc/S32K144_Package.h"
 #include "stdint.h"

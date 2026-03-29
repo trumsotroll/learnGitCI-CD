@@ -6,7 +6,7 @@
  */
 #include "stdio.h"
 #include "../inc/GPIO_driver.h"
-#include "../../hal/inc/GPIO_hal.h"
+#include "../../hal/inc/gpio_hal.h"
 #include "../inc/common_driver.h"
 
 extern ARM_DRIVER_GPIO DriverGPIO;
