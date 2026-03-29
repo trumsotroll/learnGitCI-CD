@@ -13,6 +13,8 @@ file(GLOB SRC_FILES       src/*.c)
 file(GLOB DRIVER_FILES    driver/src/*.c)
 file(GLOB HAL_FILES       hal/src/*.c)
 file(GLOB STARTUP_FILES   Project_Settings/Startup_Code/*.c)
+file(GLOB STARTUP_C_FILES   Project_Settings/Startup_Code/*.c)
+file(GLOB STARTUP_ASM_FILES Project_Settings/Startup_Code/*.S)
 
 # Include paths
 include_directories(
@@ -33,6 +35,9 @@ add_executable(firmware
 # Linker script
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Project_Settings/Linker_Files/S32K144_64_flash.ld)
 target_link_options(firmware PRIVATE -T${LINKER_SCRIPT})
+
+# set firmware extention .elf
+set(CMAKE_EXECUTABLE_SUFFIX ".elf")
 
 # Generate .hex and .bin after build
 add_custom_command(TARGET firmware POST_BUILD
