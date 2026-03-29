@@ -31,7 +31,7 @@ add_executable(firmware
 )
 
 # Linker script
-set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Project_Settings/Linker_Files/linker.ld)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Project_Settings/Linker_Files/S32K144_64_flash.ld)
 target_link_options(firmware PRIVATE -T${LINKER_SCRIPT})
 
 # Generate .hex and .bin after build
