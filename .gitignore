@@ -1,0 +1,9 @@
+#build output
+*.o
+*.elf
+*.bin
+*.hex
+*.srec
+*.map
+Debug_FLASH/
+Debug_RAM/

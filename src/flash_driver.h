@@ -4,6 +4,17 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#define SRAM_L_START  0x1FFF8000u
+#define SRAM_L_END    0x1FFFFFFFu   /* 0x20000000 - 1 */
+#define SRAM_U_START  0x20000000u
+#define SRAM_U_END    0x20006FFFu   /* 0x20007000 - 1 */
+#define FLASH_START   0x00000000u
+#define FLASH_END     0x0007FFFFu   /* 0x00080000 - 1 (512 KB flash memory) */
+
+#define SECTOR_SIZE   0x1000u       /* S32K144 P-Flash sector = 4 KB */
+#define PHRASE_SIZE   8u            /* Program-phrase unit = 8 bytes  */
+
+
 /**
  * @brief Parsed SREC record container.
  *
@@ -21,18 +32,26 @@ typedef struct
 /**
  * @brief Check if a value is a valid Main Stack Pointer.
  *
- * @param[in] x MSP value to validate.
+ * @param[in] MSP value to validate.
  * @return true if valid, false otherwise.
  */
-bool is_valid_msp(uint32_t x);
+bool is_valid_msp(uint32_t);
+
+/**
+ * @brief Check whether an address lies in RAM memory.
+ *
+ * @param[in] Address to check.
+ * @return Non-zero if address is in RAM, 0 otherwise.
+ */
+uint32_t is_in_ram(uint32_t);
 
 /**
  * @brief Check whether an address lies in flash memory.
  *
- * @param[in] x Address to check.
+ * @param[in] Address to check.
  * @return Non-zero if address is in flash, 0 otherwise.
  */
-uint32_t is_in_flash(uint32_t x);
+uint32_t is_in_flash(uint32_t);
 
 /**
  * @brief Validate application image at given base address.

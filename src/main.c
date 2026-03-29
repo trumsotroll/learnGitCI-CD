@@ -20,8 +20,6 @@
 #define APP_MAX_SIZE     (FLASH_END - APP_START)
 #define ERASED_MAP_WORDS ((APP_MAX_SIZE / SECTOR_SIZE + 31u) / 32u)
 #define LINE_BUF_SIZE    256u
-#define FLASH_START 0x00000000u
-#define FLASH_END  0x00080000u
 
 /* -------------------------------------------------------------------------- */
 /*  Extern drivers                                                            */

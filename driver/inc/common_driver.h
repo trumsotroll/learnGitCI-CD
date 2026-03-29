@@ -1,8 +1,8 @@
 #ifndef COMMON_DRIVER_H
 #define COMMON_DRIVER_H
 #include "stdint.h"
-#include "S32K144.h"
-#include "S32K144_features.h"
+#include "../../include/S32K144.h"
+#include "../../include/S32K144_features.h"
 
 /**
  * @enum STATUS_ERROR_CODE

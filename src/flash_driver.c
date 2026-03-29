@@ -1,22 +1,16 @@
 #include <stdint.h>
 #include <string.h>
-#include "S32K144.h"
+#include "../include/S32K144.h"
 #include "flash_driver.h"
-#include "UART_driver.h"
-#include "common_driver.h"
-#include "s32_core_cm4.h"
+#include "../driver/inc/UART_driver.h"
+#include "../driver/inc/common_driver.h"
+#include "../include/s32_core_cm4.h"
+#include "memory_check.h"
+
 
 /* -------------------------------------------------------------------------- */
 /*  RAM / Flash address ranges (from linker script)                           */
 /* -------------------------------------------------------------------------- */
-#define SRAM_L_START  0x1FFF8000u
-#define SRAM_L_END    0x20000000u   /* end-exclusive */
-#define SRAM_U_START  0x20000000u
-#define SRAM_U_END    0x20007000u   /* end-exclusive */
-#define FLASH_END     0x00080000u   /* 512 KB */
-
-#define SECTOR_SIZE   0x1000u       /* S32K144 P-Flash sector = 4 KB */
-#define PHRASE_SIZE   8u            /* Program-phrase unit = 8 bytes  */
 
 /** Function -----------------------------------------------------------------
 *  Function name: irq_disable_save
@@ -45,19 +39,19 @@ inline void irq_restore(uint32_t primask)
 *  Function name: is_in_ram
 *  Description: check if x (Stack pointer) is in RAM address or not
 * -------------------------------------------------------------------------- */
-__attribute__((section(".code_ram")))
-uint32_t is_in_ram(uint32_t x)
-{
-    if (x >= SRAM_L_START && x <= SRAM_L_END)
-    {
-    	return 1;
-    }
-    if (x >= SRAM_U_START && x <= SRAM_U_END)
-    {
-    	return 1;
-    }
-    return 0;
-}
+//__attribute__((section(".code_ram")))
+//uint32_t is_in_ram(uint32_t x)
+//{
+//    if (x >= SRAM_L_START && x <= SRAM_L_END)
+//    {
+//    	return 1;
+//    }
+//    if (x >= SRAM_U_START && x <= SRAM_U_END)
+//    {
+//    	return 1;
+//    }
+//    return 0;
+//}
 
 /** Function -----------------------------------------------------------------
 *  Function name: app_valid
