@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install ARM toolchain
+        run: sudo apt-get install -y gcc-arm-none-eabi
+
+      - name: Build firmware
+        run: arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -c src/*.c -Isrc
+
+      - name: Run unit tests
+        run: |
+          gcc -o test_runner test/test.c test/Unity/unity.c -Itest/Unity -Isrc
+          ./test_runner
