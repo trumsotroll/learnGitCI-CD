@@ -1,0 +1,7 @@
+-c
+-I"D:/workspaceS32DS.3.5/BootLoader_prj/include"
+-x assembler-with-cpp
+-DSTART_FROM_FLASH
+-g3
+-mcpu=cortex-m4
+-specs=nosys.specs
