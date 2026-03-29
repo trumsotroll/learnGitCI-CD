@@ -36,8 +36,7 @@ add_executable(firmware
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/Project_Settings/Linker_Files/S32K144_64_flash.ld)
 target_link_options(firmware PRIVATE -T${LINKER_SCRIPT})
 
-# set firmware extention .elf
-set(CMAKE_EXECUTABLE_SUFFIX ".elf")
+set_target_properties(firmware PROPERTIES OUTPUT_NAME "firmware" SUFFIX ".elf")
 
 # Generate .hex and .bin after build
 add_custom_command(TARGET firmware POST_BUILD
