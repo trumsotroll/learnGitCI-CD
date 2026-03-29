@@ -1,10 +1,10 @@
-#include "GPIO_hal.h"
-#include "S32K144.h"
-#include "S32K144_Package.h"
+#include "../inc/GPIO_hal.h"
+#include "../../include/S32K144.h"
+#include "../inc/S32K144_Package.h"
 #include "stdint.h"
 #include "stdbool.h"
 #include "stdio.h"
-#include "common_driver.h"
+#include "../../driver/inc/common_driver.h"
 /*--------------------------------------- Common use---------------------------------------------------------------*/
 /* declare a callback function pointer array for 5 GPIO PORT */
 ARM_GPIO_SignalEvent_t callback[5][32] = {NULL};
