@@ -1,6 +1,6 @@
-#include "Systick_driver.h"
-#include "Systick_hal.h"
-#include "S32K144.h"
+#include "../inc/Systick_driver.h"
+#include "../inc/Systick_hal.h"
+#include "../../include/S32K144.h"
 
 /*FUNCTION**********************************************************************
  *

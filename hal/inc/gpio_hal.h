@@ -1,10 +1,10 @@
 #ifndef GPIO_HAL_H
 #define GPIO_HAL_H
 
-#include "device_registers.h"
-#include "S32K144.h"
+#include "../../include/device_registers.h"
+#include "../../include/S32K144.h"
 #include "stdbool.h"
-#include "common_driver.h"
+#include "../../driver/inc/common_driver.h"
 
 #define RISING  0x09 /* Mode interrupt rising edge */
 #define FALLING 0x0A /* Mode interrupt falling edge */

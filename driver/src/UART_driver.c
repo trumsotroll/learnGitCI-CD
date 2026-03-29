@@ -1,6 +1,6 @@
-#include "UART_driver.h"
-#include "common_driver.h"
-#include "S32K144.h"
+#include "../inc/UART_driver.h"
+#include "../inc/common_driver.h"
+#include "../../include/S32K144.h"
 
 /* define physical UART1 pinout */
 #define UART1_RX 6

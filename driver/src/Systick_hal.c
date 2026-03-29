@@ -1,6 +1,6 @@
-#include "Systick_hal.h"
-#include "S32K144.h"
-#include "common_driver.h"
+#include "../inc/Systick_hal.h"
+#include "../../include/S32K144.h"
+#include "../inc/common_driver.h"
 
 extern uint32_t SystemCoreClock;
 #define PROCESSOR_CLK 4

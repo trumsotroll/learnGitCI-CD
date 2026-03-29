@@ -1,9 +1,9 @@
 #include <stdint.h>
-#include "S32K144_features.h"   // hoặc header CMSIS tương đương
-#include "S32K144.h"
-#include "s32_core_cm4.h"
+#include "../include/S32K144_features.h"   // hoặc header CMSIS tương đương
+#include "../include/S32K144.h"
+#include "../include/s32_core_cm4.h"
 #include "jump_to_app.h"
-#include "UART_driver.h"
+#include "../driver/inc/UART_driver.h"
 
 /**
  * function to run at the entry 1 (reset handler)

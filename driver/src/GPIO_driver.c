@@ -5,9 +5,9 @@
  *      Author: khang
  */
 #include "stdio.h"
-#include "GPIO_driver.h"
-#include "GPIO_hal.h"
-#include "common_driver.h"
+#include "../inc/GPIO_driver.h"
+#include "../../hal/inc/GPIO_hal.h"
+#include "../inc/common_driver.h"
 
 extern ARM_DRIVER_GPIO DriverGPIO;
 ARM_DRIVER_GPIO* GPIOPtr = &DriverGPIO;
