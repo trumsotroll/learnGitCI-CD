@@ -19,15 +19,13 @@ jobs:
 
       - name: Build firmware
         run: |
-          arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -c \
-            -DCPU_S32K144HFT0VLLT \
-            -Isrc -Idriver/inc -Ihal/inc -Iinclude \
-            src/*.c driver/src/*.c hal/src/*.c \
-            Project_Settings/Startup_Code/*.c
+          mkdir build && cd build
+          cmake -DCMAKE_TOOLCHAIN_FILE=../arm-toolchain.cmake ..
+          make firmware
 
       - name: Run unit tests
         run: |
-          gcc -o test_runner test/test.c test/Unity/unity.c \
-            -Itest/Unity -Isrc -Iinclude \
-            -DCPU_S32K144HFT0VLLT
+          mkdir build-test && cd build-test
+          cmake ..
+          make test_runner
           ./test_runner
