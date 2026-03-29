@@ -1,13 +1,13 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../include/S32K144.h"
-#include "../include/system_S32K144.h"
-#include "../include/S32K144_features.h"
-#include "../include/s32_core_cm4.h"
+#include "S32K144.h"
+#include "system_S32K144.h"
+#include "S32K144_features.h"
+#include "s32_core_cm4.h"
 
-#include "../driver/inc/UART_driver.h"
-#include "../driver/inc/GPIO_driver.h"
+#include "UART_driver.h"
+#include "GPIO_driver.h"
 
 #include "jump_to_app.h"
 #include "flash_driver.h"

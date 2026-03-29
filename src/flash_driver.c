@@ -1,10 +1,10 @@
 #include <stdint.h>
 #include <string.h>
-#include "../include/S32K144.h"
+#include "S32K144.h"
 #include "flash_driver.h"
-#include "../driver/inc/UART_driver.h"
-#include "../driver/inc/common_driver.h"
-#include "../include/s32_core_cm4.h"
+#include "UART_driver.h"
+#include "common_driver.h"
+#include "s32_core_cm4.h"
 #include "memory_check.h"
 
 

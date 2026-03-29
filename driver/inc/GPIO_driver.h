@@ -8,8 +8,8 @@
 #ifndef INC_GPIO_DRIVER_H_
 #define INC_GPIO_DRIVER_H_
 
-#include "../../hal/inc/S32K144_Package.h"
-#include "../../hal/inc/gpio_hal.h"
+#include "S32K144_Package.h"
+#include "gpio_hal.h"
 
 /**
  * @enum PULL_t
