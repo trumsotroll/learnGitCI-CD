@@ -73,7 +73,7 @@ uint32_t app_valid(uint32_t app_base)
     uint32_t MainStackPointer = *(uint32_t *)(app_base + 0u);
     uint32_t AppResetHandler = *(uint32_t *)(app_base + 4u);
 
-    if (!is_in_ram(MainStackPointer)) /* check MSP in RAM_L or RAM_U */
+    if (MainStackPointer < SRAM_L_START || MainStackPointer > (SRAM_U_END + 1u)) /* check MSP in RAM_L or RAM_U, +1u because Arm stack full-descending MSP */
     {
     	return 0;
     }

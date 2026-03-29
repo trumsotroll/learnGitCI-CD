@@ -8,6 +8,7 @@
 #ifndef MEMORY_CHECK_H_
 #include <stdint.h>
 
+
 uint32_t is_in_ram(uint32_t x);
 
 #define MEMORY_CHECK_H_

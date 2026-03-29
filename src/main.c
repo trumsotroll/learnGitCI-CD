@@ -11,6 +11,7 @@
 
 #include "jump_to_app.h"
 #include "flash_driver.h"
+#include "memory_check.h"
 
 /* -------------------------------------------------------------------------- */
 /*  Configuration Flash sector                                                           */
