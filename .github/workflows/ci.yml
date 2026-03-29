@@ -22,8 +22,8 @@ jobs:
           mkdir build && cd build
           cmake -DCMAKE_TOOLCHAIN_FILE=../arm-toolchain.cmake ..
           make firmware
-	
-	- name: Upload firmware
+
+      - name: Upload firmware
         uses: actions/upload-artifact@v4
         with:
           name: firmware
