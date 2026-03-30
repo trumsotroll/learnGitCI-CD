@@ -12,7 +12,6 @@ add_definitions(-DCPU_S32K144HFT0VLLT)
 file(GLOB SRC_FILES       src/*.c)
 file(GLOB DRIVER_FILES    driver/src/*.c)
 file(GLOB HAL_FILES       hal/src/*.c)
-file(GLOB STARTUP_FILES   Project_Settings/Startup_Code/*.c)
 file(GLOB STARTUP_C_FILES   Project_Settings/Startup_Code/*.c)
 file(GLOB STARTUP_ASM_FILES Project_Settings/Startup_Code/*.S)
 
@@ -29,7 +28,8 @@ add_executable(firmware
     ${SRC_FILES}
     ${DRIVER_FILES}
     ${HAL_FILES}
-    ${STARTUP_FILES}
+    ${STARTUP_C_FILES}
+    ${STARTUP_ASM_FILES}
 )
 
 # Linker script
